@@ -1,0 +1,19 @@
+ANALYSIS LOG - written 2026-10-10
+
+DATA: HMP2/IBDMDB (PRJNA398089). Host rectal-biopsy RNA-seq = authors' processed counts (raw reads controlled access); stool shotgun metagenomes from ENA.
+COHORT: 71 people (31 CD, 21 nonIBD, 19 UC); one biopsy per person; stool metagenome within 12 weeks (median 2); antibiotic users kept (covariate). Two biopsies dropped for near-empty libraries (HSM5FZAZ, MSM719ME).
+METAGENOME PROCESSING: fastp; first 5M read pairs per sample; human reads NOT removed; RGI bwt (KMA) vs CARD 4.0.2; reads per million of total reads.
+
+PRE-SPECIFIED PRIMARY: test 3 acquired-type reads vs inflammation score; test 4 composition vs diagnosis; test 2 E. coli/Enterobacteriaceae vs score (PENDING).
+  Test 3: rho -0.02, p 0.89; adjusted effect 0.0015 (95% CI -0.025 to 0.028, log10 scale). Test 4: PERMANOVA R2 0.028, p 0.46. Holm across tests 3 and 4 is provisional.
+PRE-SPECIFIED SECONDARY: test 1 total reads; test 5 drug classes (30, BH); test 6 richness; test 7 GSVA pathways; sensitivity runs. Only phosphonic acid survived BH (q about 0.016).
+POST HOC (uncorrected, hypothesis-generating): mdtG, Fos-gene subset, total efflux, adjusted and within-group models, pairwise contrasts, carrier plots, E. coli proxy, GSVA validation.
+
+LIMITATIONS: n = 71 (80% power only for |rho| >= about 0.33); acquired-type defined by mechanism and dominated by near-universal gut genes (tet(Q), CfxA, tet(O), tet(W)); phosphonic acid signal is about 90% mdtG, a chromosomal E. coli efflux gene; read cap and no human-read removal; CARD/RGI only; bulk tissue; inflammation score from marker genes, not histology; reads saved for 56 of 71 people.
+OPEN: test 2 route; final Holm across three primaries.
+
+UPDATE  2026-10-10 : test 2 NOT performed (no taxonomy; insufficient local disk space). Holm applied across tests 3 and 4 only (p_holm = 0.91 each). E. coli-gene proxy reported as post hoc.
+
+UPDATE  2026-10-10 : human reads were removed (bowtie2) for 2 samples, SRR5947008 and SRR5935961; not removed for the other 69.
+
+UPDATE  2026-10-11 : human reads were removed (bowtie2) for 2 samples, SRR5947008 and SRR5935961; not removed for the other 69.

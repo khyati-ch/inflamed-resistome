@@ -52,6 +52,8 @@ Of nsp13's 40 high-confidence interactors, 38 were present in the expressed gene
 | UC vs non-IBD (primary) | 1.15 | 0.26 | 0.87 | 5 of 17 | 0.30 |
 | CD vs non-IBD (secondary) | −1.11 | 0.27 | 0.45 | 11 of 17 | 0.26 |
 
+![Figure 1. fgsea enrichment plot for nsp13's 38 testable interactors in UC vs non-IBD. The enrichment score (0.33) is not significant (p = 0.26).](results/proteomics/nsp13_UC_enrichment.png)
+
 The pre-specified test gives no detectable enrichment of nsp13's interactors in either disease. Its power is limited by the 38-gene set size, so this result supports "no detectable shift" rather than "no effect".
 
 ### Positive control: interferon signalling
@@ -60,6 +62,8 @@ The pre-specified test gives no detectable enrichment of nsp13's interactors in 
 |---|---|---|---|---|
 | Interferon Signaling | 2.59 | 6.3 × 10⁻²⁴ | 2.13 | 5.9 × 10⁻¹² |
 | ISG15 Antiviral Mechanism | 2.03 | 1.9 × 10⁻⁵ | 0.80 | 0.81 |
+
+![Figure 2. Normalised enrichment scores for the two pre-specified interferon gene sets. Interferon signalling is strongly up in UC and CD. The ISG15 antiviral set is up in UC only; in CD it is not significant (padj 0.81).](results/proteomics/ifn_sets_NES.png)
 
 Interferon signalling is strongly up in both diseases. This confirms that the pipeline detects the biology it is meant to detect, which makes the null result for nsp13 a valid measurement rather than a technical failure. No nsp13 interactor lies within either interferon set.
 
@@ -95,6 +99,8 @@ TBK1 was identified after the main analysis, from nsp13's 38 testable interactor
 | Replication, UC (GSE75214) | log₂FC +0.13, p = 0.054; 48th percentile of \|t\| |
 | Structure (nsp13–TBK1) | Not resolved; the positive control also scored below the confident range |
 
+![Figure 3. Distribution of the absolute Wald statistic across expressed genes in UC vs non-IBD. The red line marks TBK1 (|stat| 4.06), which lies above about 92% of genes.](results/proteomics/TBK1_stat_distribution.png)
+
 ### Interpretation
 
 The most supported reading is that TBK1 is a UC-specific, innate immune gene that rises in inflamed colon tissue. Its rise is not explained by expression level or by the interferon signature, and it points in the same direction in an independent cohort. Because it is a single gene selected after the analysis began, it should be treated as a strong hypothesis rather than a confirmed association.
@@ -113,7 +119,7 @@ The most supported reading is that TBK1 is a UC-specific, innate immune gene tha
 
 **Interpretation.** The positive control reached an ipTM of 0.40, which is below the usual confident threshold (about 0.6). The ORF9b–TOM70 model does place ORF9b's central region against TOM70, as the crystal structure shows (PDB 7DHG), so the method captured part of the known interface. Overall confidence in ORF9b was low (mean pLDDT about 25 in this model). The nsp13–TBK1 score was higher than the negative control in its best model, but the difference is small and does not support a confident interface. The structure check therefore neither confirms nor excludes direct binding.
 
-**PAE plots** are in `alphafold/figures/`. ColabFold's notebook output includes the five models, PAE plots and score files for each run.
+**PAE plots** from the five-model runs are held with the ColabFold result files and will be added to `alphafold/figures/`.
 
 ## 8. Limitations and interpretation
 
@@ -143,9 +149,9 @@ The most supported reading is that TBK1 is a UC-specific, innate immune gene tha
 - `analysis_script.R`, `exploratory_checks.R`: analysis code
 - `prespecification_note.txt`, `replication_prespecification.txt`: dated design and replication rules
 - `results_summary.txt`: results used in this README
-- `results/proteomics/`: enrichment CSVs, interferon CSVs, the interferon-removed TBK1 result (`tbk1_interferon_removed.csv`), and the enrichment figure
+- `results/proteomics/`: enrichment CSVs, interferon CSVs, the interferon-removed TBK1 result (`tbk1_interferon_removed.csv`), and the figures
 - `replication/GSE75214_UC_vs_CTRL_limma.csv`: replication gene-level results
-- `alphafold/alphafold_summary.csv`: structure scores, and `alphafold/figures/`: PAE plots
+- `alphafold/alphafold_summary.csv`: structure scores (PAE figures to be added to `alphafold/figures/`)
 - `data/zenodo/Table2.xlsx`: Gordon et al. interaction table
 
 Patient-level HMP2 data are not included. The discovery analysis begins from the DESeq2 result tables.

@@ -1,0 +1,13 @@
+PRE-SPECIFICATION NOTE (recorded on 13 October 2026)
+
+Caveat: this note was written after the analysis had been run. It reconstructs the design
+agreed before the overlap was examined.
+
+Bait: nsp13 only. No backup bait.
+Background: 19,825 genes in the DESeq2 object (at least 10 counts in at least 19 of 71 samples).
+Ranking: DESeq2 Wald statistic.
+Primary contrast: UC vs non-IBD. Secondary: CD vs non-IBD.
+Primary test: fgsea across baits; rank baits by absolute NES, two-sided, direction reported separately.
+Null control: 1,000 random gene sets matched on mean expression (10 bins).
+Positive control: REACTOME_INTERFERON_SIGNALING and REACTOME_ISG15_ANTIVIRAL_MECHANISM, Holm across the two.
+Minimum size: fewer than 5 expressed interactors = underpowered.

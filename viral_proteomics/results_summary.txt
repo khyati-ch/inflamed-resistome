@@ -1,0 +1,22 @@
+RESULTS SUMMARY
+
+Enrichment (nsp13 interactors, fgsea):
+  UC: NES 1.15, p 0.26, padj 0.87, rank 5/17, matched-random p 0.30
+  CD: NES -1.11, p 0.27, padj 0.45, rank 11/17, matched-random p 0.26
+  Interactors matched: 38 of 40. Unmatched: CEP43, TLE5.
+
+Positive control (interferon sets):
+  Interferon Signaling: UC NES 2.59 (padj 6.3e-24); CD NES 2.13 (padj 5.9e-12)
+  ISG15 Antiviral Mechanism: UC NES 2.03 (padj 1.9e-5); CD NES 0.80 (padj 0.81)
+
+TBK1:
+  Discovery UC: log2FC +0.34, p 5e-5, padj 0.0006, percentile 0.920 overall, 0.926 expression-matched
+  Discovery UC, interferon genes removed: percentile 0.921 (19,574 genes remaining)
+  Discovery CD: log2FC +0.12, p 0.12
+  Replication GSE75214 UC: log2FC +0.126, t 1.95, p 0.054, padj 0.11, percentile 0.48
+  Replication, interferon genes removed: percentile 0.48
+
+AlphaFold (ipTM, ColabFold AF2-multimer v3):
+  ORF9b+TOM70 (positive control): best 0.40, others 0.37-0.39
+  nsp13+TBK1: best 0.30, others 0.17-0.18
+  nsp13+GAPDH (negative control): best 0.14, others 0.13-0.14

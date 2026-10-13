@@ -1,0 +1,16 @@
+REPLICATION PRE-SPECIFICATION (recorded on 13 October 2026)
+
+Discovery result: TBK1 log2FC +0.34 in UC, padj 0.0006.
+Replication 1: GSE75214, Affymetrix Gene 1.0 ST (GPL6244), colonic biopsies.
+  UC: disease 'ulcerative colitis', activity 'active', tissue 'colon' (n = 74).
+  Controls: disease 'control', activity 'normal', tissue 'colon' (n = 11).
+  Probe rule: highest mean expression per gene. Test: limma eBayes, UC vs CTRL.
+  Rules: Replicates = same direction and p < 0.05.
+         Fails = opposite direction, or p >= 0.05 with fold change near zero.
+         Inconclusive = same direction, p >= 0.05.
+  Result: log2FC +0.126, t = 1.95, p = 0.054. Classification: inconclusive.
+
+Replication 2 (RNA-seq): not completed.
+  Excluded: Taman et al. 2017 (PMID 29040430). No GEO accession or public count matrix found.
+  Excluded: Swedish colonic IBD RNA-seq dataset (researchdata.se). Controlled access, personal data.
+  GEO search limited to 10 results: no dataset met all four criteria.

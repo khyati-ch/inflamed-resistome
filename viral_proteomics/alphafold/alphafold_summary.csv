@@ -1,0 +1,4 @@
+pair,best_ipTM,other_models_ipTM,ipSAE_best
+ORF9b_TOM70 (positive control),0.4,0.37-0.39,0.05
+nsp13_TBK1,0.3,0.17-0.18,0.005
+nsp13_GAPDH (negative control),0.14,0.13-0.14,0

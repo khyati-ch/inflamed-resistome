@@ -1,0 +1,7 @@
+*.zip
+*.RData
+*.Rhistory
+*.rds
+.Rproj.user/
+replication/GSE*/
+alphafold/*/
